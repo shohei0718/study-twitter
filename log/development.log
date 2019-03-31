@@ -1,0 +1,2724 @@
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `twitter_development` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `twitter_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6671199748738134225', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to SorceryCore (20190309062417)
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) NOT NULL, `crypted_password` varchar(255), `salt` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190309062417_sorcery_core.rb:3
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20190309062417_sorcery_core.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190309062417')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddNameAndScreenNameAndBioToUsers (20190309063027)
+  [1m[35m (26.7ms)[0m  [1m[35mALTER TABLE `users` ADD `name` varchar(255)[0m
+  ↳ db/migrate/20190309063027_add_name_and_screen_name_and_bio_to_users.rb:3
+  [1m[35m (16.9ms)[0m  [1m[35mALTER TABLE `users` ADD `screen_name` varchar(255)[0m
+  ↳ db/migrate/20190309063027_add_name_and_screen_name_and_bio_to_users.rb:4
+  [1m[35m (16.8ms)[0m  [1m[35mALTER TABLE `users` ADD `bio` varchar(255)[0m
+  ↳ db/migrate/20190309063027_add_name_and_screen_name_and_bio_to_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190309063027')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-03-09 06:32:13', '2019-03-09 06:32:13')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6671199748738134225')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-03-09 15:37:38 +0900
+  [1m[35m (3.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reistrations.new" for 127.0.0.1 at 2019-03-09 15:37:59 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/reistrations.new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/registrations.new" for 127.0.0.1 at 2019-03-09 15:38:07 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/registrations.new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/registrations/new" for 127.0.0.1 at 2019-03-09 15:38:19 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 724ms (Views: 721.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2019-03-09 15:39:47 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (6.1ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 47ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2019-03-09 16:03:28 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (3.2ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2019-03-09 16:03:30 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (3.6ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/registrations/new" for 127.0.0.1 at 2019-03-09 16:03:35 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (24.2ms)
+Completed 200 OK in 229ms (Views: 207.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:05:11 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 59ms (Views: 29.2ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:20:47 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (2.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 5 spaces used for indentation, but the rest of the document was indented using 3 spaces.):
+    1: #registrations-new
+    2:    .col-xs-6.left-content
+    3:      %h1 #Tsubuyaki
+    4:      %p.ex
+    5:        このサイトは、シラバスのRails学習コースの完成形サンプルアプリです。Microsoft Azure上で運用されています。
+    6:      %p.by
+  
+app/views/registrations/new.html.haml:3
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:21:13 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (1.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 5 spaces used for indentation, but the rest of the document was indented using 3 spaces.):
+    1: #registrations-new
+    2:    .col-xs-6.left-content
+    3:      %h1 Tsubuyaki
+    4:      %p.ex
+    5:        このサイトは、シラバスのRails学習コースの完成形サンプルアプリです。Microsoft Azure上で運用されています。
+    6:      %p.by
+  
+app/views/registrations/new.html.haml:3
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:22:41 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (2.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 7 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    2:   .col-xs-6.left-content
+    3:     %h1 Tsubuyaki
+    4:     %p.ex
+    5:        このサイトは、シラバスのRails学習コースの完成形サンプルアプリです。Microsoft Azure上で運用されています。
+    6:     %p.by
+    7:        開発者: @ohataken デザイン: @keito0904 企画: @saiwaki14
+    8:   .col-xs-6.right-content
+  
+app/views/registrations/new.html.haml:5
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:22:56 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (23.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Indenting at the beginning of the document is illegal.):
+    1:  !!!
+    2:  %html
+    3:  %head
+    4:    %title Tsubuyaki22Nov
+  
+app/views/layouts/registrations.html.haml:1
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:23:37 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a header command is illegal.):
+    1: !!!
+    2:   %html
+    3:   %head
+    4:     %title Tsubuyaki22Nov
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  
+app/views/layouts/registrations.html.haml:2
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:23:53 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a header command is illegal.):
+    1: !!!
+    2:   %html
+    3:     %head
+    4:       %title Tsubuyaki22Nov
+    5:       = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  
+app/views/layouts/registrations.html.haml:2
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:24:05 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a header command is illegal.):
+    1: !!!
+    2:   %html
+    3:   %head
+    4:     %title Tsubuyaki22Nov
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  
+app/views/layouts/registrations.html.haml:2
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:24:32 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (3.7ms)
+Completed 200 OK in 254ms (Views: 251.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:25:57 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 3 spaces were used for indentation, but the rest of the document was indented using 2 spaces.):
+    2: %html
+    3:   %head
+    4:     %title Tsubuyaki22Nov
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7:     = csrf_meta_tags
+    8:   %body#registrations
+  
+app/assets/stylesheets/registrations.css.sass:13
+app/views/layouts/registrations.html.haml:5:in `_app_views_layouts_registrations_html_haml___34723478730807513_70232358100920'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:27:11 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.9ms)
+Completed 200 OK in 63ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:28:25 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (3.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Shohei/projects/study-twitter/twitter/app/views/registrations/new.html.haml:10: syntax error, unexpected ')'
+)).to_s);).to_s);; _hamlout.bu...
+ ^
+/Users/Shohei/projects/study-twitter/twitter/app/views/registrations/new.html.haml:27: syntax error, unexpected keyword_ensure, expecting keyword_end
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                               ^
+/Users/Shohei/projects/study-twitter/twitter/app/views/registrations/new.html.haml:28: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Shohei/projects/study-twitter/twitter/app/views/registrations/new.html.haml:30: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/registrations/new.html.haml:10: syntax error, unexpected ')'
+app/views/registrations/new.html.haml:27: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/registrations/new.html.haml:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/registrations/new.html.haml:30: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:28:36 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (1.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+     7:       開発者: @ohataken デザイン: @keito0904 企画: @saiwaki14
+     8:   .col-xs-6.right-content
+     9:     = form_for @user, url: registrations_path, method: :post do |f|
+    10:         %h2
+    11:           会員登録する
+    12:         - @user.errors.each do |attr, message|
+    13:           .alert.alert-danger= message
+  
+app/views/registrations/new.html.haml:10
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:28:40 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.7ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:32:52 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.7ms)
+Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:33:50 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "blue": expected expression (e.g. 1px, bold), was ";"):
+    2: %html
+    3:   %head
+    4:     %title Tsubuyaki22Nov
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7:     = csrf_meta_tags
+    8:   %body#registrations
+  
+app/assets/stylesheets/registrations.css.sass:48
+app/views/layouts/registrations.html.haml:5:in `_app_views_layouts_registrations_html_haml___34723478730807513_70232306183600'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:33:57 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.4ms)
+Completed 200 OK in 61ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:25 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.6ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:27 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.5ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:29 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.1ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:37 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (3.9ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:46 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.5ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:34:53 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.3ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:40:19 +0900
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (234.6ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_sessions_path' for #<#<Class:0x007fbec5f45a48>:0x007fbec5e59ad0>
+Did you mean?  new_session_path
+               new_session_url
+               new_user_path
+               sessions_new_path
+               sessions_path):
+    24:         = f.label :password_confirmation, "確認用パスワード: 6文字以上", class: "control-label"
+    25:         = f.password_field :password_confirmation, class: "form-control"
+    26:       = f.submit "登録する", class: "btn btn-primary"
+    27:       = link_to "ログインする", new_sessions_path, class: "login pull-right"
+    28:       .clear
+  
+app/views/registrations/new.html.haml:27:in `block in _app_views_registrations_new_html_haml___3846998725054010023_70228670821400'
+app/views/registrations/new.html.haml:9:in `_app_views_registrations_new_html_haml___3846998725054010023_70228670821400'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:41:14 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (241.2ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_sessions_path' for #<#<Class:0x007fbec5f45a48>:0x007fbec3bfb9c0>
+Did you mean?  new_session_path
+               new_session_url
+               new_user_path
+               sessions_new_path
+               sessions_path):
+    24:         = f.label :password_confirmation, "確認用パスワード: 6文字以上", class: "control-label"
+    25:         = f.password_field :password_confirmation, class: "form-control"
+    26:       = f.submit "登録する", class: "btn btn-primary"
+    27:       = link_to "ログインする", new_sessions_path, class: "login pull-right"
+    28:       .clear
+  
+app/views/registrations/new.html.haml:27:in `block in _app_views_registrations_new_html_haml___3846998725054010023_70228653910720'
+app/views/registrations/new.html.haml:9:in `_app_views_registrations_new_html_haml___3846998725054010023_70228653910720'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:41:21 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.3ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 9 spaces were used for indentation, but the rest of the document was indented using 2 spaces.):
+    2: %html
+    3:   %head
+    4:     %title Tsubuyaki22Nov
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7:     = csrf_meta_tags
+    8:   %body#registrations
+  
+app/assets/stylesheets/registrations.css.sass:48
+app/views/layouts/registrations.html.haml:5:in `_app_views_layouts_registrations_html_haml___2972195414924895090_70228659624780'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:42:10 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.2ms)
+Completed 200 OK in 119ms (Views: 115.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:42:19 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:42:19 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:43:43 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (12.4ms)
+Completed 200 OK in 50ms (Views: 34.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:49:17 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 22.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:49:46 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.7ms)
+Completed 200 OK in 180ms (Views: 158.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:49:49 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 46ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:49:49 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (7.9ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 16:50:21 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xjJ+RaV0+mAs5MiqKnq1eJGDhi+qsE9FP8AgstYiB2YQbEkMGrmb8ns+ZIREY4ZO/eFZr5yttSom1iPbr039Hg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2019-03-09 16:50:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:50:43 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (8.3ms)
+Completed 200 OK in 72ms (Views: 49.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:50:45 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:50:45 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:53:35 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 77ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:53:39 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.5ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:53:42 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:53:42 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:54:24 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:54:25 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:54:43 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a header command is illegal.):
+    1: !!!
+    2:   %html
+    3:   %head
+    4:     %title Tsubuyaki18Oct
+    5:     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  
+app/views/layouts/sessions.html.haml:2
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:54:54 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (4.8ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:55:18 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.3ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:56:06 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.7ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:56:12 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.8ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:56:13 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.7ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:59:18 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.9ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:59:18 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.3ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 16:59:18 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (9.3ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 16:59:20 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (9.1ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:41:52 +0900
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (250.3ms)
+Completed 500 Internal Server Error in 300ms (ActiveRecord: 17.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x007f8f021abe48>:0x007f8f021a9198>
+Did you mean?  font_path):
+    14:           = f.label :password, "パスワード：6文字以上", class: "control-label"
+    15:           = f.password_field :password, class: "form-control"
+    16:         = f.submit "ログイン", class: "btn btn-success"
+    17:         = link_to root_path, class: "pull-right signup" do
+    18:           会員登録する
+    19:         .clear
+  
+app/views/sessions/new.html.haml:17:in `block in _app_views_sessions_new_html_haml__4347761776964025375_70126127353060'
+app/views/sessions/new.html.haml:6:in `_app_views_sessions_new_html_haml__4347761776964025375_70126127353060'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2019-03-09 20:42:11 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [12 times] (44.5ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 83ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:43:06 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (7.3ms)
+Completed 200 OK in 339ms (Views: 321.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 20:43:11 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (3.9ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:43:14 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.2ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:55:04 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.6ms)
+Completed 200 OK in 35ms (Views: 20.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:55:06 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.4ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 20:55:09 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.3ms)
+Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:55:11 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (4.7ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 20:55:25 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.6ms)
+Completed 200 OK in 37ms (Views: 21.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-03-09 20:58:30 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 404 Not Found in 10ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_in):
+  
+app/controllers/users_controller.rb:12:in `show'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 20:58:33 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:7
+  Rendered users/index.html.haml within layouts/application (241.5ms)
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x007f8f0a5b4f28>:0x007f8f026fb920>
+Did you mean?  new_session_path):
+     9:         %td=link_to user.name, user
+    10: %br
+    11: 
+    12: = link_to 'New User', new_user_path
+  
+app/views/users/index.html.haml:12:in `_app_views_users_index_html_haml__2525568314838898473_70126165404640'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 20:58:42 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:7
+  Rendered users/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 20:59:04 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:7
+  Rendered users/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 20:59:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:12:in `show'
+Started GET "/" for 127.0.0.1 at 2019-03-09 20:59:31 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (12.4ms)
+Completed 200 OK in 105ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 20:59:57 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2jXbdRGm2497qqwoL9X4d6JsXPL62pGFMCQeSOLXZNUMa+w8rmu6HSxwAAZBzMtBzg6DcszHa+opMh0hm7ierQ==", "user"=>{"name"=>"@test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `password_conformation' for #<User:0x007f8f0831ff08>):
+  
+app/controllers/registrations_controller.rb:9:in `create'
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:00:52 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2jXbdRGm2497qqwoL9X4d6JsXPL62pGFMCQeSOLXZNUMa+w8rmu6HSxwAAZBzMtBzg6DcszHa+opMh0hm7ierQ==", "user"=>{"name"=>"@test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `password_conformation' for #<User:0x007f8f0a5b5bd0>):
+  
+app/controllers/registrations_controller.rb:9:in `create'
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:01:18 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2jXbdRGm2497qqwoL9X4d6JsXPL62pGFMCQeSOLXZNUMa+w8rmu6HSxwAAZBzMtBzg6DcszHa+opMh0hm7ierQ==", "user"=>{"name"=>"@test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `password_conformation' for #<User:0x007f8f07f74de0>):
+  
+app/controllers/registrations_controller.rb:9:in `create'
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:02:38 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2jXbdRGm2497qqwoL9X4d6JsXPL62pGFMCQeSOLXZNUMa+w8rmu6HSxwAAZBzMtBzg6DcszHa+opMh0hm7ierQ==", "user"=>{"name"=>"@test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 7.1ms)
+
+
+  
+NoMethodError (undefined method `password_conformation' for #<User:0x007f8f02d94160>):
+  
+app/controllers/registrations_controller.rb:9:in `create'
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:02:41 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.6ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:02:45 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (15.7ms)
+Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:02:51 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (9.3ms)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:02:56 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JkIMsqyPb7RTYOZunE9QYqt3ppTYr1t76HxUu5xgD9ryT/mncxNemmE4NOVlLLEmhuBOjJn0+XxPCJAMMeNkzw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.8ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:03:01 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FnbQxluUlsIvtiFJUhJ8Ea28yg06t2A1S5o9xYtTRqPAKOeP5Fn3UHhsjWc8C08nwd4VjQyqmlpSjD6s8jy82w==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (3.8ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:03:04 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6boyXGuhQopcT8nfoprEh+xff47EjT+9yWi/NHGch6g/5AUV1GwjGAuVZfHMg/exgD2gDvKQxdLQfrxdCPN90A==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (4.3ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:03:05 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.0ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:03:37 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MA7FI+tyTtmqY119WzDSyYctPfW/+1atQRcgP3R4wlCfSUr+pjW1s1oNyZJxiedoe/pbWA/ictUZFq1+99HrHw==", "user"=>{"name"=>"@chope_jp", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@chope_jp' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `password_conformation' for #<User:0x007f8f0a1926e8>):
+  
+app/controllers/registrations_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:06:08 +0900
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unknown validator: 'ConformationValidator'):
+  
+app/models/user.rb:13:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/registrations_controller.rb:3:in `new'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:06:11 +0900
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unknown validator: 'ConformationValidator'):
+  
+app/models/user.rb:13:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/registrations_controller.rb:3:in `new'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:07:06 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.1ms)
+Completed 200 OK in 45ms (Views: 24.3ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:07:18 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cPzooRyyCWAXF4QwuCqDmXXNZZX2bxISbYEngIOp8oemot/oo39o8kDNKB7WM7CvGa+6FcBy6H10lyTp+sYI/w==", "user"=>{"name"=>"@test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '@test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.4ms)
+Completed 200 OK in 89ms (Views: 25.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:07:41 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTpW7VIvE8xcuQ/6UbIY4a2rz3ltFH+XQODSnAbVGkdLZGGk7eJyXgtjo9Q/qyvXwckQ+VsJhfhZ9tH1f7rgPw==", "user"=>{"name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.7ms)
+Completed 200 OK in 85ms (Views: 23.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:08:01 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThjcfqP41K18K9blCJfMNGzSdOJT5Al/zFNMwbm+oCGYRus3HDW1Pyvxestmjv8CALCrYmX58xDVRU+owNFaWQ==", "user"=>{"name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.6ms)
+Completed 200 OK in 85ms (Views: 24.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/registrations" for 127.0.0.1 at 2019-03-09 21:09:09 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/registrations"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:09:15 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.3ms)
+Completed 200 OK in 44ms (Views: 25.9ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:09:29 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fyaGCYB9+0v+Y9gL28pmJu8pPYiJzzP3lw2ju3cdVWqpeLFAP7Ca2am5dCW101UQg0viCL/SyZiOG6DSDnKvEg==", "user"=>{"name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (3.8ms)
+Completed 200 OK in 98ms (Views: 31.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/registrations" for 127.0.0.1 at 2019-03-09 21:10:28 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/registrations"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:10:53 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (4.4ms)
+Completed 200 OK in 38ms (Views: 24.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:11:04 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jh9hgd0oNbzlapavkA8LDUyZWkkFv7eVh4iPMfjTW77wQVbIYuVULrKwOoH+Fjg7IPuFyTOiTfqenoxYgbyhxg==", "user"=>{"name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `crypted_password`, `salt`, `created_at`, `updated_at`, `name`) VALUES ('test@gmail.com', '$2a$10$oPEBsZv.Lu1cIfk4RZAMc.P9oa5ZpdGzZdQs/8KI/P8AJlATWNcIC', '5ptyx7UEWEYZjpmqE6r7', '2019-03-09 12:11:04', '2019-03-09 12:11:04', 'test')[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 8.8ms)
+
+
+  
+NoMethodError (undefined method `root_url_url' for #<RegistrationsController:0x007f8f0a1aaf68>
+Did you mean?  root_url):
+  
+app/controllers/registrations_controller.rb:10:in `create'
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:11:30 +0900
+  
+NoMethodError (undefined method `to' for #<ActionDispatch::Routing::Mapper:0x007f8f01ef2008>):
+  
+config/routes.rb:5:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:11:47 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/registrations"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:11:50 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:11:58 +0900
+  
+NoMethodError (undefined method `to' for #<ActionDispatch::Routing::Mapper:0x007f8f02e51990>):
+  
+config/routes.rb:5:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:12:03 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.5ms)
+Completed 200 OK in 48ms (Views: 30.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/registrations" for 127.0.0.1 at 2019-03-09 21:12:13 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxBWmHjLsKddarPkqdc8ZJ3Spmi2XUeoFyClnz2MER2BTmHRxwbRNQqwH8rHzg9S8bB56IBAvccONqb2ROPrZQ==", "user"=>{"name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.6ms)
+Completed 200 OK in 95ms (Views: 30.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:12:17 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.4ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:12:26 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtJiQOGi3PtGHpSGVY5UCpEGtsBhusJccn2xzEVNWi7m35dVPj7t1XRGRg2s7bVOvJFe2CDhYFvVCXV76M4xOw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 123ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:12:26 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (5.0ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:13:10 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.9ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:13:49 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:7
+  Rendered users/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:14:00 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:14:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:14:06 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:7
+  Rendered users/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:15:24 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  Rendered users/index.html.haml within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    1: .col-xs-8#users-content
+    2:   .list-group
+    3:    .list-group-item.user-list
+    4:       %h2 ユーザー一覧
+    5:     = div_for @users, class: "list-group-item" do |u|
+    6:       %h4.user
+  
+app/views/users/index.html.haml:3
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:15:39 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  Rendered users/index.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The `div_for` method has been removed from Rails. To continue using it, add the `record_tag_helper` gem to your Gemfile:
+  gem 'record_tag_helper', '~> 1.0'
+Consult the Rails upgrade guide for details.):
+    2:   .list-group
+    3:     .list-group-item.user-list
+    4:       %h2 ユーザー一覧
+    5:     = div_for @users, class: "list-group-item" do |u|
+    6:       %h4.user
+    7:         %span.user-name
+    8:           = link_to u.name, user_path(u)
+  
+app/views/users/index.html.haml:5:in `_app_views_users_index_html_haml__2525568314838898473_70126143809120'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:17:30 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (19.7ms)
+Completed 200 OK in 243ms (Views: 228.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:19:27 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 52ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:19:28 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 48ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:21:10 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:22:36 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (5.3ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:23:15 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (8.4ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:23:17 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (9.7ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:23:27 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8f0TtKLKy4a3FSRkDsPx7HQQPZmVIN5mRpgXmNEaL0El8OahfVb6qIVN9u/3oBCoWYfVgdR7fGHh7NMvfJlEVA==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 115ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:23:27 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (10.3ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:24:23 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (6.3ms)
+Completed 200 OK in 46ms (Views: 27.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:24:26 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (6.7ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:24:34 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p0Qjgn0ivyU8bzwy4kBh8eBP1a7OkJzaJvhMLJnqm9xzSdaXor6OCw437rkbI4C1zdg9to/LPt2BjIibNGnwyQ==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/users
+Completed 302 Found in 116ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:24:34 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (4.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (4.5ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:33:02 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:34:03 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:34:07 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:34:58 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:35:02 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:35:05 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:35:47 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:37:33 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:38:11 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:38:22 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:38:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:39:16 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:39:21 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:39:25 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:40:05 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:40:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/settings/edit" for 127.0.0.1 at 2019-03-09 21:42:38 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:42:55 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (10.1ms)
+Completed 200 OK in 291ms (Views: 275.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:42:57 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (4.5ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:43:06 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h+R1Jqw3oCrhKhSPw+UGC/LwBCGns475r3636YfGG4hT6YAzc6uRBNNyxgQ6hudP32fsOeboLP4ICnNeKkVwnQ==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/users
+Completed 302 Found in 122ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:43:06 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (9.6ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"settings", :id=>nil}, missing required keys: [:id]):
+     7:         %li= link_to "ユーザー一覧", users_path
+     8:       %ul.nav.navbar-nav.navbar-right
+     9:         %li= link_to current_user.name, current_user
+    10:         %li= link_to "設定", edit_setting_path(@user)
+    11:         %li= link_to "ログアウト", sessions_path, method: :delete
+    12:     - else
+    13:       %ul.nav.navbar-nav.navbar-right
+  
+app/views/layouts/_header.html.haml:10:in `_app_views_layouts__header_html_haml___4237046448451098580_70189167757180'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___1291662074203629698_70189164396040'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:43:24 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (14.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (5.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"settings", :id=>nil}, missing required keys: [:id]):
+     7:         %li= link_to "ユーザー一覧", users_path
+     8:       %ul.nav.navbar-nav.navbar-right
+     9:         %li= link_to current_user.name, current_user
+    10:         %li= link_to "設定", edit_setting_path(@user)
+    11:         %li= link_to "ログアウト", sessions_path, method: :delete
+    12:     - else
+    13:       %ul.nav.navbar-nav.navbar-right
+  
+app/views/layouts/_header.html.haml:10:in `_app_views_layouts__header_html_haml___4237046448451098580_70189183553380'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___1291662074203629698_70189183275920'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:43:50 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (4.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (5.5ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"settings"}, missing required keys: [:id]):
+     7:         %li= link_to "ユーザー一覧", users_path
+     8:       %ul.nav.navbar-nav.navbar-right
+     9:         %li= link_to current_user.name, current_user
+    10:         %li= link_to "設定", edit_setting_path
+    11:         %li= link_to "ログアウト", sessions_path, method: :delete
+    12:     - else
+    13:       %ul.nav.navbar-nav.navbar-right
+  
+app/views/layouts/_header.html.haml:10:in `_app_views_layouts__header_html_haml___4237046448451098580_70189166529860'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___1291662074203629698_70189162603580'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:44:13 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (3.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (8.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7:         %li= link_to "ユーザー一覧", users_path
+     8:       %ul.nav.navbar-nav.navbar-right
+     9:         %li= link_to current_user.name, current_user
+    10:         %li= link_to "設定", edit_setting_path(@user.id)
+    11:         %li= link_to "ログアウト", sessions_path, method: :delete
+    12:     - else
+    13:       %ul.nav.navbar-nav.navbar-right
+  
+app/views/layouts/_header.html.haml:10:in `_app_views_layouts__header_html_haml___4237046448451098580_70189129867060'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___1291662074203629698_70189204689180'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:44:23 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (7.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"settings", :id=>nil}, missing required keys: [:id]):
+     7:         %li= link_to "ユーザー一覧", users_path
+     8:       %ul.nav.navbar-nav.navbar-right
+     9:         %li= link_to current_user.name, current_user
+    10:         %li= link_to "設定", edit_setting_path(@user)
+    11:         %li= link_to "ログアウト", sessions_path, method: :delete
+    12:     - else
+    13:       %ul.nav.navbar-nav.navbar-right
+  
+app/views/layouts/_header.html.haml:10:in `_app_views_layouts__header_html_haml___4237046448451098580_70189163394460'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___1291662074203629698_70189207616560'
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:44:35 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (5.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (4.5ms)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:44:41 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (6.3ms)
+  Rendered layouts/_header.html.haml (3.0ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:48:10 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (230.8ms)
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `settings_path' for #<#<Class:0x007fac62a78148>:0x007fac60cf66d8>
+Did you mean?  setting_path
+               setting_url
+               session_path
+               sessions_path):
+    1: #settings-edit
+    2:   .col-xs-6.settings-content
+    3:     = form_for @user, url: settings_path, method: :put do |f|
+    4:       %h2
+    5:         設定
+    6:       .form-body
+  
+app/views/settings/edit.html.haml:3:in `_app_views_settings_edit_html_haml__2396750307942133819_70189183124720'
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:48:28 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.1ms)
+  Rendered layouts/_header.html.haml (3.6ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:49:33 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_header.html.haml (4.9ms)
+Completed 200 OK in 95ms (Views: 91.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:52:33 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.2ms)
+  Rendered layouts/_header.html.haml (3.2ms)
+Completed 200 OK in 48ms (Views: 30.8ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/settings/id" for 127.0.0.1 at 2019-03-09 21:52:39 +0900
+Processing by SettingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5fvF4PEouiafaGLulD+x0wWK/KCPbeTW05yFcktGSLlydhePAnDes2nDaXUSc3xIHT0crQgTfxCWHF8sELjWg==", "user"=>{"name"=>"test", "screen_name"=>"", "bio"=>""}, "commit"=>"送信する", "id"=>"id"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[36mUser Exists (9.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = 'test' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[36mUser Update (7.5ms)[0m  [1m[33mUPDATE `users` SET `screen_name` = '', `bio` = '', `updated_at` = '2019-03-09 12:52:39' WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/settings_controller.rb:8
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 38ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:52:39 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (3.7ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:52:41 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (3.5ms)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:52:42 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.6ms)
+  Rendered layouts/_header.html.haml (3.1ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/settings/id" for 127.0.0.1 at 2019-03-09 21:52:50 +0900
+Processing by SettingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZEotkF4nUpkADDfbcPf52hsqKT71YUWU9NWAe+8dtg8FZAIcXK0HoqKk7xF6G0GQmLkCvCknSuLtRXNSEV+Rg==", "user"=>{"name"=>"", "screen_name"=>"", "bio"=>""}, "commit"=>"送信する", "id"=>"id"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`name` = '' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/settings_controller.rb:8
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.1ms)
+  Rendered layouts/_header.html.haml (3.2ms)
+Completed 200 OK in 43ms (Views: 33.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/settings/id" for 127.0.0.1 at 2019-03-09 21:53:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/settings/id"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:53:27 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.1ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-09 21:53:32 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (7.3ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-03-09 21:53:36 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/sessions
+  Rendered sessions/new.html.haml within layouts/sessions (5.5ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-03-09 21:53:43 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U+GVWlqUXHn91dRJC6IabqQI/Jy0Vs437KJ4GpfszWaH7GBPhQhtV8+NBsLywfsqiZ8UhPUNbDBL1rytOm+mcw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/users
+Completed 302 Found in 112ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:53:43 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (5.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (9.1ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:53:45 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (6.4ms)
+  Rendered layouts/_header.html.haml (3.9ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-09 21:53:48 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.haml:5
+  Rendered users/index.html.haml within layouts/application (7.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (6.6ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:53:49 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (2.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (4.5ms)
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:53:51 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.7ms)
+  Rendered layouts/_header.html.haml (3.7ms)
+Completed 200 OK in 48ms (Views: 37.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:53:53 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (4.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (4.3ms)
+Completed 200 OK in 43ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:53:54 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (3.9ms)
+  Rendered layouts/_header.html.haml (4.0ms)
+Completed 200 OK in 49ms (Views: 38.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:53:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (4.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (5.3ms)
+Completed 200 OK in 51ms (Views: 43.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:54:46 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (2.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (3.8ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:54:49 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.8ms)
+  Rendered layouts/_header.html.haml (2.8ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:54:50 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.4ms)
+  Rendered layouts/_header.html.haml (2.7ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:55:30 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (3.8ms)
+  Rendered layouts/_header.html.haml (5.3ms)
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:55:32 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (6.1ms)
+  Rendered layouts/_header.html.haml (3.2ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:55:33 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (3.9ms)
+Completed 200 OK in 40ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:55:33 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (3.9ms)
+  Rendered layouts/_header.html.haml (3.1ms)
+Completed 200 OK in 45ms (Views: 36.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:55:38 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.0ms)
+  Rendered layouts/_header.html.haml (4.0ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:56:20 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.3ms)
+  Rendered layouts/_header.html.haml (3.1ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:56:21 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.0ms)
+  Rendered layouts/_header.html.haml (3.1ms)
+Completed 200 OK in 39ms (Views: 33.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:56:46 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (5.1ms)
+  Rendered layouts/_header.html.haml (4.8ms)
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:56:47 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (4.6ms)
+  Rendered layouts/_header.html.haml (2.9ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-03-09 21:56:49 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (3.9ms)
+Completed 200 OK in 40ms (Views: 33.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/settings/id/edit" for 127.0.0.1 at 2019-03-09 21:56:50 +0900
+Processing by SettingsController#edit as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/settings_controller.rb:3
+  Rendering settings/edit.html.haml within layouts/application
+  Rendered settings/edit.html.haml within layouts/application (3.2ms)
+  Rendered layouts/_header.html.haml (2.5ms)
+Completed 200 OK in 42ms (Views: 27.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-31 16:47:32 +0900
+  [1m[35m (29.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Shohei/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.haml within layouts/registrations
+  Rendered registrations/new.html.haml within layouts/registrations (23.2ms)
+Completed 200 OK in 383ms (Views: 311.4ms | ActiveRecord: 23.4ms)
+
+
